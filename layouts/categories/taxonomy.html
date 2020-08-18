@@ -1,0 +1,32 @@
+{{ define "main" }}
+<main>
+    {{ .Scratch.Set "back_url" "/categories"}}
+    {{ partialCached "nav.html" . }}
+    <section class="projects-header">
+      <h1 id="page-title" >{{.Title}}</h1>
+    </section>
+    <!-- "{{.Content}}" pulls from the markdown content of the corresponding _index.md -->
+    {{.Content}}
+    <section id="projects-list">
+      <!-- Ranges through content/posts/*.md -->
+      {{ range .Pages }}
+            <!-- <a class="project-preview" href="{{.Permalink}}"> -->
+            <div class="project-preview">
+              <!-- "onclick" attribute is needed for getting focus on mobile -->
+              <div class="project-tile" onclick>
+                <a class="project-link" href="{{.Permalink}}"></a>
+                <h2>{{.Title}}</h2>
+                <div class="project-desc">
+                  <p>{{ .Description }}</p>
+                  <button>
+                    <img src="/img/assets/arrow-white.svg">
+                  </button>
+                </div>
+                <div class="project-image" style="background-image: url('/img/project-covers/{{ .Params.cover_image }}')"></div>
+              </div>
+            </div>
+      {{ end }}
+    </section>
+</main>
+{{ end }}
+

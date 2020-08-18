@@ -1,0 +1,27 @@
+{{ define "main" }}
+    <main aria-role="main" id="homepage">
+      <div id="homepage-container">
+        <div id="homepage-title-container">
+          <h1>{{.Title}}</h1>
+          {{ with .Params.subtitle }}
+            <span class="subtitle">{{.}}</span>
+          {{ end }}
+          <a id="scroll-down" href="#categories-container">
+            <span></span>
+          </a>
+        </div>
+        <figure id="homepage-cover">
+          <div id="homepage-overlay"></div>
+          {{ with .Params.background_video }}
+            <video autoplay loop muted playsinline >
+            <!-- <video> -->
+              <source src="{{ . }}" type="video/mp4">
+            </video>
+          {{ else }}
+            <img src="{{ .Params.background_image }}">
+          {{ end }}
+        </figure>
+      </div>
+      {{- partial "categories-list.html" . -}}
+    </main>
+{{ end }}

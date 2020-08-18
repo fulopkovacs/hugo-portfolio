@@ -1,0 +1,11 @@
+{{ define "main" }}
+<main id="categories-single-page">
+    {{- partial "nav.html" . -}}
+    <section class="categories-header">
+      <h1 id="page-title">{{.Title}}</h1>
+      <!-- "{{.Content}}" pulls from the markdown content of the corresponding _index.md -->
+      {{.Content}}
+    </section>
+    {{- partial "categories-list.html" . -}}
+</main>
+{{ end }}

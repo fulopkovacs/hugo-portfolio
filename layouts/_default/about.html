@@ -1,0 +1,58 @@
+{{ define "main" }}
+<section id="about-page">
+  <div id="image-viewer" class="inactive">
+    <div id="image-viewer-bar">
+      <button id="close-image-viewer">
+        <span class="label">{{ $.Site.Params.labels.close }}</span>
+        <img src="/img/assets/close-black.svg">
+      </button>
+    </div>
+    <div id="image-viewer-img-container">
+      <img src="">
+    </div>
+  </div>
+  {{- partial "nav.html" . -}}
+  <article id="project-content">
+    <h1 id="title">{{ .Title }}</h1>
+    <div id="description-container">
+      <p id="description">{{ .Description }}</p>
+    </div>
+    {{ .Content }}
+  </article>
+</section>
+<script>
+// find all image tags
+var imageNodes = document.querySelectorAll('#project-content img')
+var imgViewer = document.querySelector('#project-page #image-viewer')
+var imgInViewer = document.querySelector('#image-viewer-img-container img') 
+var html = document.querySelector('html')
+
+function openImageViewer(image) {
+  imgInViewer.src = image.src
+  imgViewer.classList.replace('inactive', 'active')
+  html.classList.add('hide-scrollbar') 
+}
+
+function closeImageViewer() {
+  imgViewer.classList.replace('active', 'inactive')
+  html.classList.remove('hide-scrollbar') 
+}
+
+function handleClickOnImage(event) {
+  var image = event.target
+  if (imgViewer.classList.contains('inactive')) {
+    openImageViewer(image)
+  } else {
+    closeImageViewer()
+  }
+}
+
+// attach event listener to every image:
+for (var i=0; i<imageNodes.length; i++) {
+  imageNodes[i].addEventListener('click', handleClickOnImage)
+}
+
+document.querySelector('#close-image-viewer').addEventListener('click', closeImageViewer)
+
+</script>
+{{ end }}

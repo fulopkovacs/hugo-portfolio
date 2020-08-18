@@ -1,0 +1,23 @@
+<section id="categories-container">
+  {{ with $taxonomy := .Site.Taxonomies.categories }}
+    {{ range $taxonomy.Alphabetical }}
+      <a href="{{.Page.Permalink}}">
+        <!-- Grab the cover image of the latest project in the category -->
+        {{ $firstChild := index .Pages 0 }}
+        {{ $pages := .Pages }}
+        {{ $page := .Page }}
+        {{ with $firstChild.Params.cover_image }}
+          <div class="category-tile" style="background-image: url('/img/project-covers/{{.}}')">
+            <span class="category-label">
+              <div class="category-label-name">
+                {{ $pageCount := len $pages }}
+                <h2>{{ $page.Title }} ({{ $pageCount }})</h2>
+                <img class="arrow" src="/img/assets/arrow-white.svg">
+              </div>
+            </span>
+          </div>
+        {{ end }}
+      </a>
+    {{ end }}
+  {{ end }}
+</section>
