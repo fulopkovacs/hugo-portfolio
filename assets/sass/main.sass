@@ -48,6 +48,7 @@ html, body
   margin: 0
   overflow-x: hidden
   scroll-behavior: smooth
+  font-size: 16px
 
 html.hide-scrollbar
   overflow-y: hidden
@@ -120,7 +121,7 @@ span.arrow
         display: inline
         text-decoration: none
 
-    a 
+    a
       color: $primary-color
       display: block
       text-decoration: none
@@ -136,9 +137,10 @@ span.arrow
     #about
       text-align: right
       width: 100%
+
 html, body
   height: 100%
-  
+
   body
     display: flex
     flex-direction: column
@@ -157,7 +159,6 @@ footer
   padding: 2.5em 0 1.5em 0
   text-align: center
 
-
 // PROJECT PAGE
 #project-page, #about-page
   h1
@@ -175,13 +176,12 @@ footer
       color: $primary-color
       display: inline-block
       font-family: $secondary-font
-      font-size:  1em
       margin-bottom: 30px
       margin: auto
       max-width: 80%
       padding: 30px
       text-align: center
-    
+
 
   #project-content
     display: block
@@ -384,7 +384,7 @@ footer
         transition: opacity 0.5s 0.2s
         white-space: nowrap
 
-      .arrow 
+      .arrow
         height: 2.5em
 
     &:hover .category-label
@@ -434,8 +434,8 @@ footer
         font-size: 2em
         font-style: italic
         font-weight: 300
-        padding-bottom: 1em 
-        padding-top: 1em 
+        padding-bottom: 1em
+        padding-top: 1em
         transition: background-color, color 0.3s ease
 
       .project-desc
@@ -446,7 +446,7 @@ footer
         overflow: hidden
         transition: height 0.5s ease
 
-        p 
+        p
           opacity: 0
           transition: opacity 0.5s ease 0.05s
 
@@ -480,9 +480,10 @@ footer
           color: $accent-color
 
 // ABOUT PAGE
-#about-page 
-  #navbar #navbar-content #about
-    display: none
+#about-page
+  #navbar #navbar-content
+    #about, #site-title
+      display: none
 
   #project-content
     h1, h2

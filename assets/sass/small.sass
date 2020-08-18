@@ -22,7 +22,7 @@
     a
       width: 100%
       height: 50vw
-      
+
       .category-tile .category-label
         transition-duration: 0.3s
 
@@ -30,17 +30,16 @@
           transition-delay: 0.1s
           transition-duration: 0.3s
 
-  // CATEGORIES LIST PARTIAL
+  // TAXONOMY LIST
   #projects-list
 
     .project-preview
       height: 100vw
       width: 100%
 
-  // TAXONOMY LIST
-  #project-list
     .project-preview .project-tile .project-desc
       transition-duration: 0.2s
+
 
   // HOME PAGE
   #homepage
@@ -61,3 +60,46 @@
           height: 105%
           overflow: hidden
           width: auto
+
+// TABLET
+@media only screen and (max-width: 900px) and (min-width: 599px)
+  html, body
+    font-size: 14px
+    -webkit-text-size-adjust: none; // prevent scaling up 14px on Safari to 21px
+
+  // TAXONOMY LIST
+  #projects-list
+
+    .project-preview
+      height: 50vw
+      width: 50%
+
+    .project-preview .project-tile .project-desc
+      transition-duration: 0.2s
+
+  // HOME PAGE
+  #homepage
+    #homepage-overlay
+      height: 100vh
+
+    #homepage-container
+
+      #homepage-title-container
+        h1
+          font-size: 4em
+
+        .subtitle
+          margin: 0 20px
+
+      figure#homepage-cover
+        video
+          overflow: hidden
+
+  // PROJECT PAGE
+  #project-page, #about-page
+
+    #project-content
+      max-width: 500px
+
+      #image-viewer
+        transition-duration: 0.2s
