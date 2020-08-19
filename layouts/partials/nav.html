@@ -1,5 +1,6 @@
 <nav id="navbar">
   <div id=navbar-content>
+      {{ $category_page := .Site.GetPage "/categories" }}
       {{ if eq (lower .Layout) "about" }}
         <a id="nav-back" href="/">
           <img class="arrow" src="/img/assets/arrow-black-small.svg"></img>
@@ -12,7 +13,7 @@
           <span class="label">{{ index .Params.categories 0 }}</span>
         </a>
       <!-- "CATEGORIES" PAGE -->
-      {{ else if eq (.Type) ("categories") }}
+      {{ else if eq (.Title) ($category_page.Title) }}
         <a id="nav-back" href="/">
           <img class="arrow" src="/img/assets/arrow-black-small.svg"></img>
           <span class="label">{{ $.Site.Params.labels.home }}</span>
@@ -21,7 +22,7 @@
       {{ else if (isset .Data "Plural" ) }}
         <a id="nav-back" href="/{{.Data.Plural | lower | urlize}}">
           <img class="arrow" src="/img/assets/arrow-black-small.svg"></img>
-          <span class="label">{{.Data.Plural}}</span>
+          <span class="label">{{$category_page.Title}}</span>
         </a>
       {{ end }}
     <a id="site-title" href="/">{{.Site.Title}}</a>
