@@ -1,6 +1,6 @@
 ---
 Title: {{ .Site.Author.name }}
-description: Sample description
+description: "Sample description"
 layout: about
 
 ---

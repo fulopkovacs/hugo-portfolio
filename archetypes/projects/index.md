@@ -1,8 +1,8 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
-description: Your description
+description: "Your description"
 categories:
-  - sample-category
+  - "sample-category"
 cover_image: placeholder.jpg
 date: {{ .Date }}
 draft: true
