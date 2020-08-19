@@ -3,7 +3,7 @@
       {{ if eq (lower .Layout) "about" }}
         <a id="nav-back" href="/">
           <img class="arrow" src="/img/assets/arrow-black-small.svg"></img>
-          <span class="label">home</span>
+          <span class="label">{{ $.Site.Params.labels.home }}</span>
         </a>
       <!-- SINGLE PAGES -->
       {{ else if (isset .Params "categories") }}
@@ -12,10 +12,10 @@
           <span class="label">{{ index .Params.categories 0 }}</span>
         </a>
       <!-- "CATEGORIES" PAGE -->
-      {{ else if eq (lower .Data.Plural) (lower .Title) }}
+      {{ else if eq (.Type) ("categories") }}
         <a id="nav-back" href="/">
           <img class="arrow" src="/img/assets/arrow-black-small.svg"></img>
-          <span class="label">home</span>
+          <span class="label">{{ $.Site.Params.labels.home }}</span>
         </a>
       <!-- "CATEGORY" PAGES -->
       {{ else if (isset .Data "Plural" ) }}
