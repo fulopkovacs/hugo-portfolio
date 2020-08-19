@@ -9,7 +9,7 @@
     {{.Content}}
     <section id="projects-list">
       <!-- Ranges through content/posts/*.md -->
-      {{ range .Pages }}
+      {{ range .Pages.ByTitle  }}
             <!-- <a class="project-preview" href="{{.Permalink}}"> -->
             <div class="project-preview">
               <!-- "onclick" attribute is needed for getting focus on mobile -->
