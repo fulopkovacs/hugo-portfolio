@@ -10,18 +10,22 @@
             <span></span>
           </a>
         </div>
-        <figure id="homepage-cover">
-          <div id="homepage-overlay"></div>
-          {{ with .Params.background_video }}
-            <video autoplay loop muted playsinline >
-            <!-- <video> -->
-              <source src="{{ . }}" type="video/mp4">
-            </video>
-          {{ else }}
-            <img src="{{ .Params.background_image }}">
-          {{ end }}
-        </figure>
-      </div>
+        {{ with .Params.background_video }}
+          <figure id="homepage-cover" class="homepage-video">
+            <div id="homepage-overlay"></div>
+              <video autoplay loop muted playsinline >
+              <!-- <video> -->
+                <source src="{{ . }}" type="video/mp4">
+              </video>
+            </div>
+          </figure>
+        {{ else }}
+          <figure id="homepage-cover" class="homepage-image">
+            <div id="homepage-overlay"></div>
+              <img src="{{ .Params.background_image }}">
+            </div>
+          </figure>
+        {{ end }}
       {{ .Content }}
       {{- partial "categories-list.html" . -}}
     </main>
