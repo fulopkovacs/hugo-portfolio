@@ -9,10 +9,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 <link rel="alternate" type="application/rss+xml" href="{{ .Site.BaseURL }}index.xml" title="{{ .Site.Title }}">
+<link rel="stylesheet" href="/css/fonts.css" media="screen">
 {{ $style_main := resources.Get "sass/main.sass" | toCSS | minify }}
 {{ $style_small := resources.Get "sass/small.sass" | toCSS | minify }}
 <link rel="stylesheet" href="{{ $style_main.Permalink }}" media="screen">
 <link rel="stylesheet" href="{{ $style_small.Permalink }}" media="screen">
 {{ hugo.Generator -}}
-<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,600,600i,700,700i&display=swap&subset=latin-ext" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,400i,700,700i&display=swap&subset=latin-ext" rel="stylesheet">
