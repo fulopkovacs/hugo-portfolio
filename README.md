@@ -1,3 +1,5 @@
+<h1 style="color:red">This is still a Work in Progress</h1>
+
 # Portfolio theme for Hugo
 
 ## Using archetypes
