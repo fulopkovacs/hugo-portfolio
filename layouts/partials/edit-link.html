@@ -1,0 +1,9 @@
+<div>
+  {{ if $.Site.Params.edit_links.enable }}
+    {{ if in $.Site.Params.edit_links.repo_url  "gitlab.com"}}
+      <a href="{{$.Site.Params.edit_links.repo_url}}-/edit/master/content/{{.File}}" target="_">{{$.Site.Params.edit_links.label }}</a>
+    {{ else if in $.Site.Params.edit_links.repo_url "github.com"}}
+      <a href="{{$.Site.Params.edit_links.repo_url}}edit/master/content/{{.File}}" target="_">{{$.Site.Params.edit_links.label }}</a>
+    {{ end }}
+  {{ end }}
+</div>
