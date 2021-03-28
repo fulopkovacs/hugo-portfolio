@@ -89,9 +89,9 @@ span.arrow
 
 // NAV BAR
 #navbar
-  background: $accent-color
+  background: $primary-color
   border-bottom: $primary-color 1px solid
-  color: $primary-color
+  color: $accent-color
   font-family: $secondary-font
   height: 2.5em
   position: sticky;
@@ -127,7 +127,7 @@ span.arrow
         text-decoration: none
 
     a
-      color: $primary-color
+      color: $accent-color
       display: block
       text-decoration: none
       width: 100%
@@ -214,7 +214,7 @@ footer
         opacity: 0.5
 
   #image-viewer
-    background: $accent-color
+    background: $primary-color
     height: 100%
     left: 0
     opacity: 0
@@ -232,7 +232,7 @@ footer
 
     #close-image-viewer
       align-items: center
-      background: $accent-color
+      background: $primary-color
       border: none
       cursor: pointer
       display: flex
@@ -249,7 +249,7 @@ footer
         transition: transform 0.3s ease
 
       .label
-        color: $primary-color
+        color: $accent-color
         display: inline
         text-transform: uppercase
 
@@ -513,3 +513,30 @@ footer
         margin-top: 2em
     p
       line-height: 1.3
+
+// DARK THEME
+/* Dark mode */
+@media (prefers-color-scheme: dark)
+  #navbar
+    background-color: $accent-color;
+
+    #navbar-content a
+      color: $primary-color;
+
+    img
+      filter: invert(1);
+
+  #image-viewer
+    #image-viewer-bar
+      background-color: $accent-color;
+
+      #close-image-viewer
+        background-color: $accent-color;
+        color: $primary-color;
+
+        .label
+          color: $primary-color;
+
+        img
+          -webkit-filter: invert(1);
+          filter: invert(1);
