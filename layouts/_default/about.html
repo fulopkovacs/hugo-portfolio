@@ -26,19 +26,19 @@
 <script>
 // find all image tags
 var imageNodes = document.querySelectorAll('#project-content img')
-var imgViewer = document.querySelector('#project-page #image-viewer')
-var imgInViewer = document.querySelector('#image-viewer-img-container img') 
+var imgViewer = document.querySelector('#image-viewer')
+var imgInViewer = document.querySelector('#image-viewer-img-container img')
 var html = document.querySelector('html')
 
 function openImageViewer(image) {
   imgInViewer.src = image.src
   imgViewer.classList.replace('inactive', 'active')
-  html.classList.add('hide-scrollbar') 
+  html.classList.add('hide-scrollbar')
 }
 
 function closeImageViewer() {
   imgViewer.classList.replace('active', 'inactive')
-  html.classList.remove('hide-scrollbar') 
+  html.classList.remove('hide-scrollbar')
 }
 
 function handleClickOnImage(event) {
