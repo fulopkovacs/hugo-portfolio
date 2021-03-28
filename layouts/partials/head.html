@@ -1,3 +1,6 @@
+{{ if .Site.Params.hide_from_search_engines }}
+<meta name="robots" content="noindex" />
+{{ end }}
 <meta charset="utf-8" />
 <title>{{ block "title" . }}{{ end }}{{ .Site.Title }}</title>
 {{- with ($.Scratch.Get "Description") }}
